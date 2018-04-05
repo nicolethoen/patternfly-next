@@ -1,3 +1,12 @@
-<button class="pf-c-button">
-  {{> @partial-block}}
+<button class="pf-c-button {{ btnClass }}"
+        {{#if btnAriaLabel}}aria-label="{{ btnAriaLabel }}"{{/if}}
+        {{#if btnAriaPressed}}aria-pressed="{{ btnAriaPressed }}"{{/if}}
+        {{#if btnTabIndex}}tabIndex="{{ btnTabIndex }}"{{/if}}
+        {{#if btnAriaDisabled}}aria-disabled="{{ btnAriaDisabled }}"{{/if}}
+        {{#if tooltip}} data-toggle="tooltip" data-placement="right" title="{{tooltip}}"{{/if}}
+        {{attributes}}>
+    {{#if @partial-block}}
+        {{> @partial-block }}
+    {{/if}}
+    {{ btnText }}
 </button>

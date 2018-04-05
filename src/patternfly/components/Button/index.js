@@ -5,10 +5,3 @@ import './styles.scss'
 
 export const Docs = docs
 
-export default ({children, className = ''}) => {
-  return (
-    <button className={`pf-c-button ${className}`}>
-      {children}
-    </button>
-  )
-}

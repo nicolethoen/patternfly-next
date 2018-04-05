@@ -1,26 +1,25 @@
 import React from 'react'
 import Documentation from '@siteComponents/Documentation'
 import Example from '@siteComponents/Example'
-import Button, { Docs } from '@components/Button'
+import ButtonTypesTemplate from './buttonTypes.hbs';
+import ButtonSizesTemplate from './buttonSizes.hbs';
+import ButtonStatesTemplate from './buttonStates.hbs';
+import { Docs } from '@components/Button'
 
 export default () => {
+  const buttonTypesTemplate = {__html: ButtonTypesTemplate()}
+  const buttonSizesTemplate = {__html: ButtonSizesTemplate()}
+  const buttonStatesTemplate = {__html: ButtonStatesTemplate()}
   return (
     <Documentation docs={Docs}>
       <Example heading="Button Types">
-        <Button>Default</Button>
-        <Button className="pf-is-primary">Primary</Button>
-        <Button className="pf-is-secondary">Secondary</Button>
-        <Button className="pf-is-tertiary">Tertiary</Button>
-        <Button className="pf-is-danger">Danger</Button>
+        <div dangerouslySetInnerHTML={buttonTypesTemplate}></div>
       </Example>
       <Example heading="Button Sizes">
-        <Button className="pf-is-primary pf-is-small">Small</Button>
-        <Button className="pf-is-primary pf-is-large">Large</Button>
+          <div dangerouslySetInnerHTML={buttonSizesTemplate}></div>
       </Example>
       <Example heading="Button States">
-        <Button className="pf-is-primary pf-has-focus">Focused</Button>
-        <Button className="pf-is-primary pf-is-active" ariaPressed="true">Active</Button>
-        <Button className="pf-is-primary pf-is-disabled" tabIndex="-1" aria-disabled="true">Disabled</Button>
+          <div dangerouslySetInnerHTML={buttonStatesTemplate}></div>
       </Example>
     </Documentation>
   )
